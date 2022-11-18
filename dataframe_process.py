@@ -7,6 +7,16 @@ data["Last Name"]= new[1]
 df.isnull().any().any()
 
 # Create multiple dataframes in loop
+# https://stackoverflow.com/questions/30635145/create-multiple-dataframes-in-loop
+## method1
 dfs = ['df1', 'df2', 'df3', 'df4']
 for df in dfs:
      exec('{} = pd.DataFrame()'.format(df))
+
+## method2 --> a better way     
+dfs = ['df5', 'df6']     
+d = {}
+for name in dfs:
+    d[name] = pd.DataFrame()    
+for name, df in d.items():
+    # operate on DataFrame 'df' for company 'name'   
