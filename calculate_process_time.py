@@ -1,3 +1,5 @@
+## https://stackoverflow.com/questions/766335/python-speed-testing-time-difference-milliseconds
+
 >>> import datetime
 >>> a = datetime.datetime.now()
 >>> b = datetime.datetime.now()
