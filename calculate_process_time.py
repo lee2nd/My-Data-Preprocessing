@@ -13,6 +13,3 @@ datetime.timedelta(0, 4, 316543)
 4
 >>> c.microseconds
 316543
-
-print(123)
-45647
