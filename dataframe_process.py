@@ -6,6 +6,9 @@ data["Last Name"]= new[1]
 # Check if any value is NaN in a Pandas DataFrame
 df.isnull().any().any()
 
+# Drop NAN
+https://www.digitalocean.com/community/tutorials/pandas-dropna-drop-null-na-values-from-dataframe
+
 # Create multiple dataframes in loop
 # https://stackoverflow.com/questions/30635145/create-multiple-dataframes-in-loop
 ## method1
