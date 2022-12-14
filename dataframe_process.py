@@ -20,3 +20,7 @@ for name in dfs:
     d[name] = pd.DataFrame()    
 for name, df in d.items():
     # operate on DataFrame 'df' for company 'name'   
+
+# Drop columns whose name contains a specific string
+# ex : Result1, Test1, Result2, Test2, Result3, Test3, etc...
+df = df[df.columns.drop(list(df.filter(regex='Test')))]
