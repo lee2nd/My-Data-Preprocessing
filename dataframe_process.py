@@ -21,6 +21,11 @@ for name in dfs:
 for name, df in d.items():
     # operate on DataFrame 'df' for company 'name'   
 
-# Drop columns whose name contains a specific string
-# ex : Result1, Test1, Result2, Test2, Result3, Test3, etc...
-df = df[df.columns.drop(list(df.filter(regex='Test')))]
+# Drop columns whose name contains a specific string (_id,_time)
+# ex : ['scan_report_time', 'scan_sheet_id', 'scan_tool_id', 'scan_lot_id',
+       'scan_cst_id', 'scan_operation_id', 'scan_mes_id', 'track_report_time',
+       'track_sheet_id', 'track_tool_id', 'track_lot_id', 'track_cst_id',
+       'track_operation_id', 'track_mes_id', 'meth_report_time',
+       'meth_sheet_id', 'meth_tool_id', 'meth_lot_id', 'meth_cst_id',
+       'meth_operation_id', 'meth_mes_id']
+df = df[df.columns.drop(list(df.filter(regex='_id|_time')))]
