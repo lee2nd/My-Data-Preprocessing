@@ -61,4 +61,19 @@ df.drop(('a', 'c'), axis = 1)
 # 0  1  7  21  8
 # 1  2  9  21  8
 
+# Construct dataframe from dict
+data = {'col_1': [3, 2, 1, 0], 'col_2': ['a', 'b', 'c', 'd']}
+pd.DataFrame.from_dict(data)
 
+#    col_1 col_2
+# 0      3     a
+# 1      2     b
+# 2      1     c
+# 3      0     d
+
+# Convert dataframe to 2d Array
+df.values
+# array([[3, 'a'],
+#        [2, 'b'],
+#        [1, 'c'],
+#        [0, 'd']]
