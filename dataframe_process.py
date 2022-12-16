@@ -32,3 +32,33 @@ for name, df in d.items():
        'meth_sheet_id', 'meth_tool_id', 'meth_lot_id', 'meth_cst_id',
        'meth_operation_id', 'meth_mes_id']
 df = df[df.columns.drop(list(df.filter(regex='_id|_time')))]
+
+# Giving a column multiple indexes/headers
+header = pd.MultiIndex.from_product([['location1','location2'],
+                                     ['S1','S2','S3']],
+                                    names=['loc','S'])
+df = pd.DataFrame(np.random.randn(5, 6), 
+                  index=['a','b','c','d','e'], 
+                  columns=header)
+# loc location1                     location2                    
+# S          S1        S2        S3        S1        S2        S3
+# a   -1.245988  0.858071 -1.433669  0.105300 -0.630531 -0.148113
+# b    1.132016  0.318813  0.949564 -0.349722 -0.904325  0.443206
+# c   -0.017991  0.032925  0.274248  0.326454 -0.108982  0.567472
+# d    2.363533 -1.676141  0.562893  0.967338 -1.071719 -0.321113
+# e    1.921324  0.110705  0.023244 -0.432196  0.172972 -0.50368
+
+# Drop a column from a multi-level column index
+# https://stackoverflow.com/questions/25135578/python-pandas-drop-a-column-from-a-multi-level-column-index
+#    a         x   
+#    b  c  f   c  f
+# 0  1  3  7  21  8
+# 1  2  4  9  21  8
+
+df.drop(('a', 'c'), axis = 1)
+#    a      x   
+#    b  f   c  f
+# 0  1  7  21  8
+# 1  2  9  21  8
+
+
