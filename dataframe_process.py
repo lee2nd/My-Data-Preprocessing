@@ -77,3 +77,17 @@ df.values
 #        [2, 'b'],
 #        [1, 'c'],
 #        [0, 'd']]
+
+# flatten multi columns to one column
+data = {
+    "priceA": [17, 35, 87],
+    "priceB": [47, 45, 65],
+    "priceC": [pd.NA, 15, 64],
+}
+df = pd.DataFrame(data)
+data_trans = (df
+             .values  # to_numpy()
+             .T       # transpose
+             .ravel() # flatten
+              )
+df_trans = pd.DataFrame(data_trans, copy=False)
