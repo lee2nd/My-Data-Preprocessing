@@ -26,11 +26,11 @@ for name, df in d.items():
 
 # Drop columns whose name contains a specific string (_id,_time)
 # ex : ['scan_report_time', 'scan_sheet_id', 'scan_tool_id', 'scan_lot_id',
-       'scan_cst_id', 'scan_operation_id', 'scan_mes_id', 'track_report_time',
-       'track_sheet_id', 'track_tool_id', 'track_lot_id', 'track_cst_id',
-       'track_operation_id', 'track_mes_id', 'meth_report_time',
-       'meth_sheet_id', 'meth_tool_id', 'meth_lot_id', 'meth_cst_id',
-       'meth_operation_id', 'meth_mes_id']
+#       'scan_cst_id', 'scan_operation_id', 'scan_mes_id', 'track_report_time',
+#       'track_sheet_id', 'track_tool_id', 'track_lot_id', 'track_cst_id',
+#       'track_operation_id', 'track_mes_id', 'meth_report_time',
+#       'meth_sheet_id', 'meth_tool_id', 'meth_lot_id', 'meth_cst_id',
+#       'meth_operation_id', 'meth_mes_id']
 df = df[df.columns.drop(list(df.filter(regex='_id|_time')))]
 
 # Giving a column multiple indexes/headers
@@ -91,3 +91,6 @@ data_trans = (df
              .ravel() # flatten
               )
 df_trans = pd.DataFrame(data_trans, copy=False)
+
+# 選包含某 string 的 columns to list
+target_col = df.columns[df.columns.str.contains("Ylabel_")].to_list()
