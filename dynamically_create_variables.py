@@ -1,3 +1,5 @@
+# https://stackoverflow.com/questions/5036700/how-can-you-dynamically-create-variables
+    
 item_lst = ["x","y","z"]
 
 for i in range(len(item_lst)):
