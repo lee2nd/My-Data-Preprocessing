@@ -94,3 +94,14 @@ df_trans = pd.DataFrame(data_trans, copy=False)
 
 # 選包含某 string 的 columns to list
 target_col = df.columns[df.columns.str.contains("Ylabel_")].to_list()
+
+# dataframe to dictionary
+temp = [["a",1], 
+        ["b",2], 
+        ["c",3], 
+        ["d",4], 
+        ["e",5]
+        ]
+df=pd.DataFrame(temp)
+print(dict(df.values))
+# {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
