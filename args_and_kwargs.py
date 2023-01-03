@@ -55,3 +55,44 @@ print(audi.color)
 print(bmw.speed)
 # red
 # 250
+
+def my_sum(a, b, c):
+    print(a + b + c)
+
+my_list = [1, 2, 3]
+my_sum(*my_list)
+# 6
+
+def my_sum(*args):
+    result = 0
+    for x in args:
+        result += x
+    return result
+
+list1 = [1, 2, 3]
+list2 = [4, 5]
+list3 = [6, 7, 8, 9]
+
+print(my_sum(*list1, *list2, *list3))
+# 45
+
+# merging_lists
+my_first_list = [1, 2, 3]
+my_second_list = [4, 5, 6]
+my_merged_list = [*my_first_list, *my_second_list]
+
+print(my_merged_list)
+# [1, 2, 3, 4, 5, 6]
+
+# merging_dicts
+my_first_dict = {"A": 1, "B": 2}
+my_second_dict = {"C": 3, "D": 4}
+my_merged_dict = {**my_first_dict, **my_second_dict}
+
+print(my_merged_dict)
+# {'A': 1, 'B': 2, 'C': 3, 'D': 4}
+
+# string_to_list
+a = [*"RealPython"]
+print(a)
+# ['R', 'e', 'a', 'l', 'P', 'y', 't', 'h', 'o', 'n']
