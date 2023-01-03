@@ -96,3 +96,26 @@ print(my_merged_dict)
 a = [*"RealPython"]
 print(a)
 # ['R', 'e', 'a', 'l', 'P', 'y', 't', 'h', 'o', 'n']
+
+def foo(required, *args, **kwargs):
+    print(required)
+    if args:
+        print(args)
+    if kwargs:
+        print(kwargs)        
+foo()     
+# TypeError: foo() missing 1 required positional argument: 'required'
+foo('hello')
+# hello
+foo('hello',1,2,3)
+# hello
+# (1, 2, 3)
+foo('hello',1,2,3,key1='value', key2=999)
+# hello
+# (1, 2, 3)
+# {'key1': 'value', 'key2': 999}
+
+# args 其實就是 list, kwargs 其實就是 dict, 新增新資料的方式相同
+def foo(x, *args, **kwargs):
+    kwargs['name'] = 'Alice'
+    new_args = args + ('extra', )
