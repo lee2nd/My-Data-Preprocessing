@@ -110,7 +110,7 @@ foo('hello')
 foo('hello',1,2,3)
 # hello
 # (1, 2, 3)
-foo('hello',1,2,3,key1='value', key2=999)
+foo('hello',1,2,3,key1='value',key2=999)
 # hello
 # (1, 2, 3)
 # {'key1': 'value', 'key2': 999}
