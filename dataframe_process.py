@@ -105,3 +105,17 @@ temp = [["a",1],
 df=pd.DataFrame(temp)
 print(dict(df.values))
 # {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+
+# filter rows containing a string pattern
+# https://stackoverflow.com/questions/27975069/how-to-filter-rows-containing-a-string-pattern-from-a-pandas-dataframe
+# ids    vals
+# aball   1
+# bball   2
+# cnut    3
+# fball   4
+# filter rows which contain the key word "ball"
+# ids    vals
+# aball   1
+# bball   2
+# fball   4
+df[df['ids'].str.contains("ball")]
